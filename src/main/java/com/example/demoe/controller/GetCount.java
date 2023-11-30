@@ -60,21 +60,21 @@ public class GetCount {
         return sb.toString();
     }
 
-    @PostMapping("/log")
-    public ResponseEntity<String> postMessage(@RequestBody String meeting){
-
-        try(BufferedWriter buff = new BufferedWriter(new FileWriter(newFile,true))){
-            buff.write(meeting + "#" + "\n");
-        }catch (IOException exception){
-            System.out.println(exception.getMessage());
-        }
-        LocalDate date = LocalDate.now();
-        String postedTime = date + " " + count ++;
-        mappedString.put(postedTime, meeting);
-        postedMeeting.add(meeting);
-        System.out.println(postedMeeting);
-        return ResponseEntity.ok(String.format("String:\"%s\",was saved in the list",postedMeeting));
-
-    }
+//    @PostMapping("/log")
+//    public ResponseEntity<String> postMessage(@RequestBody String meeting){
+//
+//        try(BufferedWriter buff = new BufferedWriter(new FileWriter(newFile,true))){
+//            buff.write(meeting + "#" + "\n");
+//        }catch (IOException exception){
+//            System.out.println(exception.getMessage());
+//        }
+//        LocalDate date = LocalDate.now();
+//        String postedTime = date + " " + count ++;
+//        mappedString.put(postedTime, meeting);
+//        postedMeeting.add(meeting);
+//        System.out.println(postedMeeting);
+//        return ResponseEntity.ok(String.format("String:\"%s\",was saved in the list",postedMeeting));
+//
+//    }
 }
 
